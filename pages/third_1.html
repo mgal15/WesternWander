@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>Sculpture Finds</title>
+    <link rel="stylesheet" href="/style/final_style.css">
+  </head>
+<body>
+    <h1 id="riddle">Western Wander</h1>
+    <h3>Riddle #3.1</h3>
+    <div class="card">
+    <div class="card-body">
+        <p class="riddle1">"Head to a building, where secrets unfold, <br> A name that's famed, both daring and bold. <br> 007's ally, sharp and discreet, <br> Now travel up where knowledge is neat. <br> Four flights high, your path will steer, <br> To a hall where learning is near."</p>
+        <p>Points: <h5 id="points"></h5></p>
+
+        <div class="grid text-center">
+            <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1" id="hintbutton1" onclick="hint1()">
+                HINT 1
+            </button>
+            <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2" id="hintbutton2" onclick="hint2()">
+                HINT 2
+            </button>
+            <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3" id="hintbutton3" onclick="hint3()">
+                HINT 3
+            </button>
+        </div>
+        <div class="collapse" id="collapse1">
+            <div class="card card-body">
+                Go inside a building where the name relates to Bond, James Bond
+            </div>
+        </div>
+        <div class="collapse" id="collapse2">
+            <div class="card card-body">
+                Travel to the 2nd and a half floor
+            </div>
+        </div>
+        <div class="collapse" id="collapse3">
+            <div class="card card-body">
+                You are looking for the math center, where High level math is taught
+            </div>
+        </div>
+
+        <h6>What taught here?</h6>
+        <div class="check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio1">
+                <label class="form-check-label" for="Radio1">
+                    Lower level math
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio2">
+                <label class="form-check-label" for="Radio2">
+                    Research projects
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio3">
+                <label class="form-check-label" for="Radio3">
+                    High level math
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio4">
+                <label class="form-check-label" for="Radio4">
+                   Both high and low levels of math
+                </label>
+                </div>
+              <p id="message">Correct! Great job</p>
+        </div>
+    </div>
+        <button type="button" class="btn-2" onclick="enter_threept1()">Enter</button>
+        <nav aria-label="Page navigation example" id="show">
+            <ul class="pagination">
+              <li id="next_button" class="page-item"><a class="page-link" href="fourth.html">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+    
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="popover"]').popover();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="/java/java_final.js"></script>
+</body>
+</html>
