@@ -12,10 +12,10 @@
   </head>
 <body>
     <h1 id="riddle">Western Wander</h1>
-    <h3>Riddle #1</h3>
+    <h3>Riddle #2.1</h3>
     <div class="card">
     <div class="card-body">
-        <p class="riddle1">"I'm a hub where students gather, near a shore that's calm and blue. Events, food, and resources too — what am I?"</p>
+        <p class="riddle1">"Enter the library, where knowledge is found,<br> The smell of bagels may linger around. <br> But turn the other way, where minds engage, <br> A space for learning, a scholarly stage"</p>
         <p>Points: <h5 id="points"></h5></p>
 
         <div class="grid text-center">
@@ -31,36 +31,57 @@
         </div>
         <div class="collapse" id="collapse1">
             <div class="card card-body">
-                The second word relates to a joining of sets 
+                make sure you are at a tutoring center near Zoe's bagels
             </div>
         </div>
         <div class="collapse" id="collapse2">
             <div class="card card-body">
-                This is near one of the bus stops
+                Ask a tutor or the help desk for the top 2 topics they help, it should be math and science
             </div>
         </div>
         <div class="collapse" id="collapse3">
             <div class="card card-body">
-                This is a place past the library and across the street, called the Viking Union
+                Answer is math and science
             </div>
         </div>
 
-        <h6>What is the name of the building?</h6>
-
-        <div id="q1_border" class="input-group mb-3"></div>
-            <input type="text" class="form-control" placeholder="capitalize !" aria-label="Username" id="q1" aria-describedby="basic-addon1">
+        <h6>What is MAINLY taught in this area?</h6>
+        <div class="check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio1">
+                <label class="form-check-label" for="Radio1">
+                  Math and science
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio2">
+                <label class="form-check-label" for="Radio2">
+                    Reading and writing
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio3">
+                <label class="form-check-label" for="Radio3">
+                    History
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio4">
+                <label class="form-check-label" for="Radio4">
+                    Social Sciences
+                </label>
+                </div>
+              <p id="message">Correct! Great job</p>
         </div>
-
-        <p id="message">Correct! Great job</p>
-            
-        <button type="button" class="btn-2" id="but1" onclick="enter_one()">Enter</button>
+    </div>
+        <button type="button" class="btn-2" onclick="enter_twopt1()">Enter</button>
         <nav aria-label="Page navigation example" id="show">
             <ul class="pagination">
-              <li id="next_button" class="page-item"><a class="page-link" href="first_1.html">Next</a></li>
+              <li id="next_button" class="page-item"><a class="page-link" href="second_2.html">Next</a></li>
             </ul>
           </nav>
         </div>
-    </div>
+    
     <script>
         $(document).ready(function(){
           $('[data-toggle="popover"]').popover();
