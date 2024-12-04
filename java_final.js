@@ -2,11 +2,24 @@ let points = parseInt(localStorage.getItem('points')) || 0;
 let flag = 0;
 document.getElementById('points').innerHTML = points;
 
+
+
+    if(points == 170){
+        document.getElementById('final_message').innerHTML = "WOW! You are quite versed in WWU's campus, great job!";
+    } else if (points < 170 && points >130){
+        document.getElementById('final_message').innerHTML = "Great job! You managed to get through the hunt with few hints";
+    } else if (points > 85 && points < 129){
+        document.getElementById('final_message').innerHTML = "Thanks for playing! Based on your score, maybe you should walk around the campus more...";
+    } else if (points < 84){
+        document.getElementById('final_message').innerHTML = "Thanks for playing! Based on your score, maybe you should walk around the campus more...";
+    }
+
+
 function enter_one(){
     var answers = "Viking Union";
     var ans1 = "viking union";
-    var asn2 = "Viking union";
-    var asn3 = "viking Union"
+    var ans2 = "Viking union";
+    var ans3 = "viking Union";
     var question = document.getElementById('q1');
     if(answers == question.value|| ans1 == question.value|| ans2== question.value|| ans3 == question.value){
         document.getElementById('q1').style.fontWeight = "bold";
@@ -16,7 +29,6 @@ function enter_one(){
         document.getElementById('message').style.display = "inline";
         document.getElementById('message').style.color = "green";
         document.getElementById('message').textContent = "Correct! Head inside the building";
-
         correctAns();
     } else {
         document.getElementById('message').style.display = "inline";
@@ -25,7 +37,8 @@ function enter_one(){
         document.getElementById('q1').style.fontWeight = "bold";
         document.getElementById('q1').style.color = "red";
         document.getElementById('q1').style.border = "1px red solid";
-        hint1();
+        points-= 1;
+        updatepoints();
     }
 }
 function enter_onept1(){
@@ -101,12 +114,10 @@ function enter_onept4(){
     }
 }
 function enter_two(){
-    var answers = "Wilson Library";
-    var answer1 = "wilson library";
-    var answer2 = "wilson Library";
-    var answer3 = 'Wilson library'
+    var answers = "Wilson";
+    var answer1 = "wilson";
     var question = document.getElementById('secondQ');
-    if(answers == question.value || answer1==question.value||answer2==question.value||answer3==question.value){
+    if(answers == question.value || answer1==question.value){
         document.getElementById('secondQ').style.fontWeight = "bold";
         document.getElementById('secondQ').style.color = "green";
         document.getElementById('secondQ').style.border = "1px green solid";
@@ -163,10 +174,10 @@ function enter_twopt2(){
     }
 }
 function enter_three(){
-    var answers = "Red Square";
-    var ans1 = "red square";
-    var ans2 = "red Square"
-    var ans3 = "Red square";
+    var answers = "Bond Hall";
+    var ans1 = "bond hall";
+    var ans2 = "bond Hall"
+    var ans3 = "Bond hall";
     var question = document.getElementById('q3');
     if(answers == question.value|| ans1 == question.value|| ans2 == question.value||ans3 == question.value){
         document.getElementById('q3').style.fontWeight = "bold";
@@ -175,7 +186,7 @@ function enter_three(){
         document.getElementById('next_button').style.display = "block";
         document.getElementById('message').style.display = "inline";
         document.getElementById('message').style.color = "green";
-        document.getElementById('message').textContent = "Correct! Stand by the Fountain!";
+        document.getElementById('message').textContent = "Correct! Enter the building on the left side!";
         correctAns();
     } else {
         document.getElementById('message').style.display = "inline";
@@ -184,7 +195,8 @@ function enter_three(){
         document.getElementById('q3').style.fontWeight = "bold";
         document.getElementById('q3').style.color = "red";
         document.getElementById('q3').style.border = "1px red solid";
-        hint1();
+        points-= 1;
+        updatepoints();
     }
     
 }
@@ -207,19 +219,17 @@ function enter_threept1(){
     }
 }
 function enter_four(){
-    var answers = "Carver Gym";
-    var ans1 = "carver gym";
-    var ans2 = "carver Gym";
-    var ans3 = "Carver gym";
+    var answers = "Carver";
+    var ans1 = "carver";
     var question = document.getElementById('q4');
-    if(answers == question.value || ans1 == question.value|| ans2 == question.value|| ans3 == question.value){
+    if(answers == question.value || ans1 == question.value){
         document.getElementById('q4').style.fontWeight = "bold";
         document.getElementById('q4').style.color = "green";
         document.getElementById('q4').style.border = "1px green solid";
         document.getElementById('next_button').style.display = "block";
         document.getElementById('message').style.display = "inline";
         document.getElementById('message').style.color = "green";
-        document.getElementById('message').textContent = "Correct! Stand Outside the gym!";
+        document.getElementById('message').textContent = "Correct! Head there now!";
         correctAns();
     } else {
         document.getElementById('message').style.display = "inline";
@@ -228,7 +238,8 @@ function enter_four(){
         document.getElementById('q4').style.fontWeight = "bold";
         document.getElementById('q4').style.color = "red";
         document.getElementById('q4').style.border = "1px red solid";
-        hint1();
+        points-= 1;
+        updatepoints();
     }
     
 }
@@ -250,37 +261,11 @@ function enter_fourpt1(){
         updatepoints();
     }
 }
-
-function enter_six(){
-    var answers = "Wade King";
-    var ans1 = "wade King";
-    var ans2 = "Wade king";
-    var ans3 = "wade king";
-    var question = document.getElementById('q6');
-    if(answers == question.value|| ans1 == question.value|| ans2== question.value||ans3==question.value){
-        document.getElementById('q6').style.fontWeight = "bold";
-        document.getElementById('q6').style.color = "green";
-        document.getElementById('q6').style.border = "1px green solid";
-        document.getElementById('next_button').style.display = "block";
-        document.getElementById('message').style.display = "inline";
-        document.getElementById('message').style.color = "green";
-        document.getElementById('message').textContent = "Correct! You've Finished!";
-        correctAns();
-    } else {
-        document.getElementById('message').style.display = "inline";
-        document.getElementById('message').style.color = "red";
-        document.getElementById('message').textContent = "Wrong, try again";
-        document.getElementById('q6').style.fontWeight = "bold";
-        document.getElementById('q6').style.color = "red";
-        document.getElementById('q6').style.border = "1px red solid";
-        hint1();
-    }
-}
 function enter_five(){
-    var answers = "Environmental Science";
-    var ans1 = "environmental science";
-    var ans2 = "environmental Science";
-    var ans3 = "Environmental science";
+    var answers = "Environmental Studies";
+    var ans1 = "environmental studies";
+    var ans2 = "environmental Studies";
+    var ans3 = "Environmental studies";
     var question = document.getElementById('q5');
     if(answers == question.value || ans1 == question.value|| ans2 == question.value|| ans3== question.value){
         document.getElementById('q5').style.fontWeight = "bold";
@@ -289,7 +274,7 @@ function enter_five(){
         document.getElementById('next_button').style.display = "block";
         document.getElementById('message').style.display = "inline";
         document.getElementById('message').style.color = "green";
-        document.getElementById('message').textContent = "Correct! Head over there!";
+        document.getElementById('message').textContent = "Correct! Head inside!";
         correctAns();
     } else {
         document.getElementById('message').style.display = "inline";
@@ -298,7 +283,8 @@ function enter_five(){
         document.getElementById('q5').style.fontWeight = "bold";
         document.getElementById('q5').style.color = "red";
         document.getElementById('q5').style.border = "1px red solid";
-        hint1();
+        points-= 1;
+        updatepoints();
     }
 }
 function enter_fivept1(){
@@ -319,12 +305,75 @@ function enter_fivept1(){
         updatepoints();
     }
 }
+function enter_six(){
+    var answers = "Wade King";
+    var ans1 = "wade King";
+    var ans2 = "Wade king";
+    var ans3 = "wade king";
+    var question = document.getElementById('q6');
+    if(answers == question.value|| ans1 == question.value|| ans2== question.value||ans3==question.value){
+        document.getElementById('q6').style.fontWeight = "bold";
+        document.getElementById('q6').style.color = "green";
+        document.getElementById('q6').style.border = "1px green solid";
+        document.getElementById('next_button').style.display = "block";
+        document.getElementById('message').style.display = "inline";
+        document.getElementById('message').style.color = "green";
+        document.getElementById('message').textContent = "Correct! head inside!";
+        correctAns();
+    } else {
+        document.getElementById('message').style.display = "inline";
+        document.getElementById('message').style.color = "red";
+        document.getElementById('message').textContent = "Wrong, try again";
+        document.getElementById('q6').style.fontWeight = "bold";
+        document.getElementById('q6').style.color = "red";
+        document.getElementById('q6').style.border = "1px red solid";
+        points-= 1;
+        updatepoints();
+    }
+}
+function enter_sixpt1(){
+    if(document.getElementById('Radio2').checked){
+        document.getElementById('Radio2').style.fontWeight = "bold";
+        document.getElementById('Radio2').style.color = "green";
+        document.getElementById('Radio2').style.border = "1px green solid";
+        document.getElementById('next_button').style.display = "block";
+        document.getElementById('message').style.display = "inline";
+        document.getElementById('message').style.color = "green";
+        document.getElementById('message').textContent = "Correct! Head outside for the LAST CLUE";
+        correctAns();
+    } else {
+        document.getElementById('message').style.display = "inline";
+        document.getElementById('message').style.color = "red";
+        document.getElementById('message').textContent = "Wrong, try again";
+        points-= 1;
+        updatepoints();
+    }
+}
+function enter_last(){
+    if(document.getElementById('Radio3').checked){
+        document.getElementById('Radio3').style.fontWeight = "bold";
+        document.getElementById('Radio3').style.color = "green";
+        document.getElementById('Radio3').style.border = "1px green solid";
+        document.getElementById('next_button').style.display = "block";
+        document.getElementById('message').style.display = "inline";
+        document.getElementById('message').style.color = "green";
+        document.getElementById('message').textContent = "YOU'VE FINISHED!!";
+        correctAns();
+    } else {
+        document.getElementById('message').style.display = "inline";
+        document.getElementById('message').style.color = "red";
+        document.getElementById('message').textContent = "Wrong, try again";
+        points-= 1;
+        updatepoints();
+    }
+}
 
 function hint1(){
     if(flag != 1){
         points -= 1;
         flag = 1;
-    updatepoints();
+        document.getElementById('hintbutton1').disabled = true;
+        updatepoints();
     }
 }
 function hint2(){
@@ -332,6 +381,7 @@ function hint2(){
         points -= 3;
         flag = 2;
         updatepoints();
+        document.getElementById('hintbutton2').disabled = true;
     }
 }
 function hint3(){
@@ -339,6 +389,7 @@ function hint3(){
         points -= 5;
         flag = 3;
         updatepoints();
+        document.getElementById('hintbutton3').disabled = true;
     }
 }
 function correctAns(){
@@ -357,12 +408,6 @@ function resetpoints(){
     localStorage.setItem('points',points);
     updatepoints();
 }
-document.getElementById('hintbutton1').addEventListener('click', function(){
-    this.disabled = true;
-});
-document.getElementById('hintbutton2').addEventListener('click', function(){
-    this.disabled = true;
-});
-document.getElementById('hintbutton3').addEventListener('click', function(){
-    this.disabled = true;
-});
+
+
+

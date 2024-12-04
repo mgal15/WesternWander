@@ -130,6 +130,28 @@ form{
 h6{
     padding: 10px 0;
 }
+h5{
+    display: inline;
+}
+#final_message{
+    padding: 20px 0;
+}
+.modal-body{
+    font-size: 13px;
+} 
+.rules{
+    display: flex;
+}
+#rules_pop{
+    flex: 1;
+    text-align: right;
+    max-width: 65px;
+    background-color: #0F2752;
+    color: white;
+}
+#points{
+    flex: 1;
+}
 @media(min-width: 430px){
     .riddle1{
         font-size: 25px;
