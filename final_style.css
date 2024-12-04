@@ -139,6 +139,7 @@ h5{
 .modal-body{
     font-size: 13px;
 } 
+
 .rules{
     display: flex;
 }
@@ -200,5 +201,8 @@ h5{
         max-width: 500px;
         align-items: center;
         margin: 0 auto;
+    }
+    .modal-dialog{
+       max-width: 600px; 
     }
 }
